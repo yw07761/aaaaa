@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thmeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Thong Tin Tuyen Xe Buyt</title>
+</head>
+<body>
+<h1>Thong Tin Tuyen Xe Buyt</h1>
+<a th:href ="@{/busroute/new}">Them Tuyen Xe Buyt</a>
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Ma Tuyen</th>
+    <th>Ten Tuyen</th>
+    <th>Khoan cach</th>
+    <th>Diem Bat Dau</th>
+    <th>Diem Ket Thuc</th>
+    <th>Gia ve</th>
+    <th>Ngay mo tuyen</th>
+    <th> </th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr th:each="busroute:${busroutes}">
+    <td th:text="{busroute.id}"></td>
+    <td th:text="{busroute.route_code}"></td>
+    <td th:text="{busroute.route_name}"></td>
+    <td th:text="{busroute.distance}"></td>
+    <td th:text="{busroute.start_location}"></td>
+    <td th:text="{busroute.finish_location}"></td>
+    <td th:text="{busroute.price}"></td>
+    <td th:date="{busroute.start_date}"></td>
+    <td>
+      <a th:href="@{busroutes/{id}/delete(id=${busroute.id})}"></a>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<h1>STT_03_20098521_HoHoangVanAnh_DHKTPM16B</h1>
+</body>
+</html>

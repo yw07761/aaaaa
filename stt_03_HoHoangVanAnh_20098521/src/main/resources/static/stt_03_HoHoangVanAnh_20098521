@@ -1,0 +1,16 @@
+CREATE DATABASE stt_03_hohoangvananh_20098521;
+Use stt_03_hohoangvananh_20098521;
+
+CREATE TABLE Busroute(
+ ID INT AUTO_INCREMENT PRIMARY KEY,
+ Route_code INT NOT NULL,
+ Route_name VARCHAR(225) NOT NULL,
+ Distance INT NOT NULL,
+ Start_location VARCHAR(225) NOT NULL,
+ Finish_location VARCHAR(225) NOT NULL,
+ Price LONG NOT NULL,
+ Start_date DATE NOT NULL
+)
+
+
+
