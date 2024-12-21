@@ -1,43 +1,50 @@
 <!DOCTYPE html>
-<html xmlns:th="http://thmeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <title>Them Tuyen Xe Buyt</title>
+  <title>Thêm Tuyến Xe Buýt</title>
 </head>
 <body>
-<h1>Them Tuyen Xe Buyt</h1>
-<form th:action = "@{busroutes}" th:object = "${busroute}" method="post">
-  <label for="route_code">Ma Tuyen:</label>
+<h1>Thêm Tuyến Xe Buýt</h1>
+<form th:action="@{/busroutes}" th:object="${busroute}" method="post">
+  <label for="route_code">Mã Tuyến:</label>
   <input type="text" id="route_code" name="route_code" th:field="*{route_code}"/>
-  <div th:if="${#fields,hesErrors('route_code')}" th:errors="*{route_code}"></div>
+  <div th:if="${#fields.hasErrors('route_code')}" th:errors="*{route_code}"></div>
   <br>
-  <label for="route_name">Ten Tuyen:</label>
+
+  <label for="route_name">Tên Tuyến:</label>
   <input type="text" id="route_name" name="route_name" th:field="*{route_name}"/>
-  <div th:if="${#fields,hesErrors('route_name')}" th:errors="*{route_name}"></div>
+  <div th:if="${#fields.hasErrors('route_name')}" th:errors="*{route_name}"></div>
   <br>
-  <label for="distance">Khoang cach:</label>
+
+  <label for="distance">Khoảng Cách:</label>
   <input type="text" id="distance" name="distance" th:field="*{distance}"/>
-  <div th:if="${#fields,hesErrors('distance')}" th:errors="*{distance}"></div>
+  <div th:if="${#fields.hasErrors('distance')}" th:errors="*{distance}"></div>
   <br>
-  <label for="start_location">Diem bat dau:</label>
+
+  <label for="start_location">Điểm Bắt Đầu:</label>
   <input type="text" id="start_location" name="start_location" th:field="*{start_location}"/>
-  <div th:if="${#fields,hesErrors('start_location')}" th:errors="*{start_location}"></div>
+  <div th:if="${#fields.hasErrors('start_location')}" th:errors="*{start_location}"></div>
   <br>
-  <label for="finish_location">Diem ket thuc:</label>
+
+  <label for="finish_location">Điểm Kết Thúc:</label>
   <input type="text" id="finish_location" name="finish_location" th:field="*{finish_location}"/>
-  <div th:if="${#fields,hesErrors('finish_location')}" th:errors="*{finish_location}"></div>
+  <div th:if="${#fields.hasErrors('finish_location')}" th:errors="*{finish_location}"></div>
   <br>
-  <label for="price">Gia ve:</label>
+
+  <label for="price">Giá Vé:</label>
   <input type="text" id="price" name="price" th:field="*{price}"/>
-  <div th:if="${#fields,hesErrors('price')}" th:errors="*{price}"></div>
+  <div th:if="${#fields.hasErrors('price')}" th:errors="*{price}"></div>
   <br>
-  <label for="start_date">Ngay mo tuyen:</label>
+
+  <label for="start_date">Ngày Mở Tuyến:</label>
   <input type="date" id="start_date" name="start_date" th:field="*{start_date}"/>
-  <div th:if="${#fields,hesErrors('start_date')}" th:errors="*{start_date}"></div>
+  <div th:if="${#fields.hasErrors('start_date')}" th:errors="*{start_date}"></div>
   <br>
-  <button type="submit">Them</button>
-  <button type="reset">Huy</button>
-  <a th:href="@{/busroutes}">Quay ve trang thong tin tuyen xe buyt</a>
+
+  <button type="submit">Thêm</button>
+  <button type="reset">Hủy</button>
+  <a th:href="@{/busroutes}">Quay về trang thông tin tuyến xe buýt</a>
 </form>
 </body>
 </html>
